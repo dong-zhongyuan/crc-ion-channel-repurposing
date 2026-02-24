@@ -80,29 +80,11 @@ All datasets are publicly available:
 
 - **TCGA-COADREAD** (n=728): [UCSC Xena](https://xenabrowser.net)
 
-- **HCT116 scRNA-seq**: CDCP dataset SCDS0000040 - [Cell-omics Data Coordinate Platform](https://ngdc.cncb.ac.cn/cdcp/)
+- **HCT116 scRNA-seq**:
+- CDCP dataset SCDS0000040 - [Cell-omics Data Coordinate Platform](https://ngdc.cncb.ac.cn/cdcp/)
+- GSE171429, sample GSM5224587 - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171429)
 
-- **HCT116 Perturb-seq**: GSE171429, sample GSM5224587 - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171429)
-
-### Data Download
-
-The scripts expect data to be organized in the following structure:
-```
-data/
-├── discovery/
-│   ├── GSE196006/
-│   └── GSE251845/
-├── validation/
-│   ├── GSE128969/
-│   ├── GSE138202/
-│   └── GSE95132/
-├── tcga/
-└── single_cell/
-    ├── hct116_scrnaseq/
-    └── hct116_perturbseq/
-```
-
-**Note**: Due to file size limitations, raw data files are not included in this repository. Please download them from the sources above.
+- **HCT116 Perturb-seq**: [Figshare](https://plus.figshare.com/ndownloader/files/55021257)
 
 ## Usage
 
