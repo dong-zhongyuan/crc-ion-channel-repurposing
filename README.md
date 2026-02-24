@@ -12,6 +12,7 @@ This study presents an integrated computational pipeline that identifies druggab
 
 ```
 code/
+├── drugmining.ipynb
 ├── step0-preprocessing.py          # Data preprocessing and batch correction
 ├── step1-deg.py                    # Differential expression analysis
 ├── step2-wgcna.py                  # WGCNA hub gene identification
