@@ -52,7 +52,7 @@ code/
 
 ```bash
 # Clone the repository
-git clone https://github.com/[USERNAME]/crc-ion-channel-repurposing.git
+git clone https://github.com/dong-zhongyuan/crc-ion-channel-repurposing.git
 cd crc-ion-channel-repurposing
 
 # Create a virtual environment (recommended)
