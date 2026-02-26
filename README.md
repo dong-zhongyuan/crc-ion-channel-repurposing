@@ -1,8 +1,4 @@
-# Ion Channel-Mediated Drug Repurposing in Colorectal Cancer
-
-This repository contains the analysis code for the manuscript:
-
-**"Ion Channel-Mediated Drug Repurposing Opportunities Revealed by Network Pharmacology and Single-Cell Perturbation Validation in Colorectal Cancer"**
+#"Ion Channel-Mediated Drug Repurposing Opportunities Revealed by Network Pharmacology and Single-Cell Perturbation Validation in Colorectal Cancer"
 
 ## Overview
 
