@@ -1,4 +1,4 @@
-#"Ion Channel-Mediated Drug Repurposing Opportunities Revealed by Network Pharmacology and Single-Cell Perturbation Validation in Colorectal Cancer"
+# Ion Channel-Mediated Drug Repurposing Opportunities Revealed by Network Pharmacology and Single-Cell Perturbation Validation in Colorectal Cancer
 
 ## Overview
 
