@@ -65,8 +65,8 @@ All datasets are publicly available:
 - **TCGA-COADREAD** (n=430): https://xenabrowser.net/datapages/?cohort=GDC%20TCGA%20Colon%20and%20Rectal%20Cancer%20(COADREAD)
 
 ### Single-Cell RNA-seq (VGAE-KO Validation)
-- **SCDS0000040** (HCT116 atlas): https://ngdc.cncb.ac.cn/cdcp/dataset/SCDS0000040
-- **GSM5224587** (HCT116-mock): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171429
+- **SCDS0000040** : https://ngdc.cncb.ac.cn/cdcp/dataset/SCDS0000040
+- **GSM5224587** : https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171429
 
 ### Perturb-seq Data (Experimental Validation)
 - **HCT116 CRISPRi Perturb-seq** (Replogle et al., Cell 2022): https://plus.figshare.com/ndownloader/files/55021257
