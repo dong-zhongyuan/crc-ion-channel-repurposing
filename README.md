@@ -1,58 +1,46 @@
-# Ion Channel-Mediated Drug Repurposing Opportunities Revealed by Network Pharmacology and Single-Cell Perturbation Validation in Colorectal Cancer
+# Ion Channel-Mediated Drug Repurposing in Colorectal Cancer
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
 
-This study presents an integrated computational pipeline that identifies druggable CRC hub genes connected to ion channel targets through protein-protein interaction bridge paths, validated by dual single-cell perturbation approaches (VGAE-KO and Perturb-seq).
+This repository contains the computational pipeline for identifying druggable colorectal cancer (CRC) hub genes connected to ion channel targets through protein-protein interaction (PPI) bridge paths, validated by dual single-cell perturbation approaches (VGAE-KO and Perturb-seq).
 
 ## Repository Structure
 
 ```
 code/
-├── drugmining.ipynb
-├── step0-preprocessing.py          # Data preprocessing and batch correction
+├── step0-pre-processing/
+│   ├── preprocessing_unified.py    # Batch correction and normalization
+│   ├── fix_ext_val.py              # External validation data preprocessing
 ├── step1-deg.py                    # Differential expression analysis
 ├── step2-wgcna.py                  # WGCNA hub gene identification
 ├── step3-external-validation.py   # External cohort validation
-├── step3_tcga.py                   # TCGA-COADREAD survival and immune analysis
-├── step4-network-pharmacology.py  # Drug-target mining and bridge path discovery
-├── step5-vgae-ko.py               # VGAE-based virtual gene knockout
-├── step6-perturbseq/              # HCT116 Perturb-seq analysis (7 strategies)
-│   ├── run_all.py
-│   ├── run_strategy2_gsea.py
-│   ├── run_strategy3_ranking.py
-│   ├── run_strategy4_mast.py
-│   ├── run_strategy5_network.py
-│   ├── run_strategy6_perturbation.py
-│   ├── run_strategy7_coexpr.py
-│   └── run_figures_summary.py
-└── step7-figures/                 # Figure generation scripts
-    ├── plot_ijms_unified.py       # Main figures 1-5
-    └── plot_supplementary_figures.py  # Supplementary figures S1-S6
+├── step3-tcga.py                   # TCGA survival analysis
+├── step4-network-pharmacology.py  # PPI bridge path + drug mining
+├── step5-vgae-ko/
+│   ├── vgae_ko_pipeline.py        # VGAE-based virtual knockout
+│   └── convert_gsm5224587.py      # GSM5224587 data conversion
+└── step6-perturb-seq/
+    ├── run_all.py                 # Master script for all strategies
+    ├── run_strategy2_gsea.py      # GSEA pathway enrichment
+    ├── run_strategy3_ranking.py   # Transcriptome-wide ranking
+    ├── run_strategy4_mast.py      # Zero-inflated differential expression
+    ├── run_strategy5_network.py   # Indirect mediator network
+    ├── run_strategy6_perturbation.py  # Global perturbation score
+    ├── run_strategy7_coexpr.py    # Co-expression disruption
+    └── run_figures_summary.py     # Evidence matrix visualization
 ```
-
-## Requirements
-
-### Python Environment
-- Python 3.9+
-- See `requirements.txt` for complete package list
-
-### Key Dependencies
-- **Data analysis**: pandas, numpy, scipy
-- **Machine learning**: scikit-learn, torch, torch-geometric
-- **Single-cell analysis**: scanpy, anndata
-- **Statistical analysis**: statsmodels, lifelines, pydeseq2
-- **Network analysis**: networkx
-- **Visualization**: matplotlib, seaborn
-- **Pathway analysis**: gseapy
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/dong-zhongyuan/crc-ion-channel-repurposing.git
+git clone https://github.com/yourusername/crc-ion-channel-repurposing.git
 cd crc-ion-channel-repurposing
 
-# Create a virtual environment (recommended)
+# Create virtual environment (recommended)
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
@@ -62,36 +50,40 @@ pip install -r requirements.txt
 
 ## Data Availability
 
-### Public Datasets Used
-
 All datasets are publicly available:
 
-- **Discovery cohorts**: 
-  - GSE196006 (n=42) - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196006)
-  - GSE251845 (n=43) - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE251845)
+### Discovery Cohorts (Bulk RNA-seq)
+- **GSE196006** (n=42): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196006
+- **GSE251845** (n=43): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE251845
 
-- **Validation cohorts**:
-  - GSE128969 (n=6) - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128969)
-  - GSE138202 (n=16) - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE138202)
-  - GSE95132 (n=24) - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95132)
+### External Validation Cohorts (Bulk RNA-seq)
+- **GSE128969** (n=6): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128969
+- **GSE138202** (n=16): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE138202
+- **GSE95132** (n=24): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95132
 
-- **TCGA-COADREAD** (n=728): [UCSC Xena](https://xenabrowser.net)
+### TCGA-COADREAD (Clinical Data)
+- **TCGA-COADREAD** (n=430): https://xenabrowser.net/datapages/?cohort=GDC%20TCGA%20Colon%20and%20Rectal%20Cancer%20(COADREAD)
 
-- **HCT116 scRNA-seq**:
-- CDCP dataset SCDS0000040 - [Cell-omics Data Coordinate Platform](https://ngdc.cncb.ac.cn/cdcp/)
-- GSE171429, sample GSM5224587 - [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171429)
+### Single-Cell RNA-seq (VGAE-KO Validation)
+- **SCDS0000040** (HCT116 atlas): https://ngdc.cncb.ac.cn/cdcp/dataset/SCDS0000040
+- **GSM5224587** (HCT116-mock): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171429
 
-- **HCT116 Perturb-seq**: [Figshare](https://plus.figshare.com/ndownloader/files/55021257)
+### Perturb-seq Data (Experimental Validation)
+- **HCT116 CRISPRi Perturb-seq** (Replogle et al., Cell 2022): https://plus.figshare.com/ndownloader/files/55021257
+
+### External Databases
+- **STRING v12.0**: https://string-db.org/api
+- **OpenTargets**: https://platform.opentargets.org/api
+- **DGIdb**: https://www.dgidb.org/api
+- **HGNC**: https://www.genenames.org/download/statistics-and-files/
 
 ## Usage
 
-### Step-by-Step Analysis Pipeline
-
-Run the analysis scripts in order:
+Run the analysis pipeline in order:
 
 ```bash
 # Step 0: Preprocessing
-python code/step0-preprocessing.py
+python code/step0-pre-processing/preprocessing_unified.py
 
 # Step 1: Differential expression analysis
 python code/step1-deg.py
@@ -101,58 +93,26 @@ python code/step2-wgcna.py
 
 # Step 3: External validation
 python code/step3-external-validation.py
-python code/step3_tcga.py
+python code/step3-tcga.py
 
 # Step 4: Network pharmacology
 python code/step4-network-pharmacology.py
 
 # Step 5: VGAE-KO validation
-python code/step5-vgae-ko.py
+python code/step5-vgae-ko/vgae_ko_pipeline.py
 
-# Step 6: Perturb-seq analysis (all strategies)
-python code/step6-perturbseq/run_all.py
-
-# Step 7: Generate figures
-python code/step7-figures/plot_ijms_unified.py
-python code/step7-figures/plot_supplementary_figures.py
-```
-
-### Configuration
-
-Each script contains configurable parameters at the top of the file. Key parameters include:
-- Input/output paths
-- Statistical thresholds (FDR, fold-change)
-- WGCNA parameters (soft-thresholding power, module size)
-- VGAE hyperparameters (latent dimensions, training epochs)
-
-## Key Results
-
-- **23 druggable hub genes** connected to **18 ion channel genes** across 9 channel families
-- **200-fold enrichment** over chance (hypergeometric p = 7.76 × 10⁻⁵⁵)
-- **Two novel regulatory axes**:
-  - Ribosomal protein–ion channel axis (targetable by ataluren)
-  - Immune checkpoint–ion channel axis (targetable by clinical antibodies)
-- **Dual validation**: VGAE-KO (13/28 validated pairs) + Perturb-seq (6 KO genes, 7 strategies)
-- **Clinical relevance**: GALK1 and CFTR associated with overall survival in TCGA-COADREAD
-
-## Citation
-
-If you use this code or data, please cite:
-
-```
-[Citation to be added upon publication]
+# Step 6: Perturb-seq analysis (all 7 strategies)
+python code/step6-perturb-seq/run_all.py
 ```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For questions or issues, please:
-- Open an issue on GitHub
-- Contact: [Your email to be added]
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
-We thank the Gene Expression Omnibus (GEO), TCGA Research Network, and the Cell-omics Data Coordinate Platform for providing public access to the datasets used in this study. We acknowledge the developers of the GenKI methodology and the X-Atlas/Orion Perturb-seq platform for their foundational contributions to single-cell perturbation analysis.
+We thank the Gene Expression Omnibus (GEO), TCGA Research Network, Cell-omics Data Coordinate Platform (CDCP), and the developers of the datasets used in this study.
+
+## Contact
+
+For questions or issues, please open an issue on GitHub.
