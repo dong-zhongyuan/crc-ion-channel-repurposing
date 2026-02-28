@@ -72,10 +72,12 @@ All datasets are publicly available:
 - **HCT116 CRISPRi Perturb-seq** (Replogle et al., Cell 2022): https://plus.figshare.com/ndownloader/files/55021257
 
 ### External Databases
-- **STRING v12.0**: https://string-db.org/api
-- **OpenTargets**: https://platform.opentargets.org/api
-- **DGIdb**: https://www.dgidb.org/api
-- **HGNC**: https://www.genenames.org/download/statistics-and-files/
+- **STRING v12.0**: https://string-db.org/api/json/network
+- **OpenTargets**: https://api.platform.opentargets.org/api/v4/graphql 
+- **DGIdb**: https://dgidb.org/api/graphql
+- **HGNC**: https://rest.genenames.org/fetch/symbol/%7Bsymbol%7D
+- **ChEMBL Target Search**: https://www.ebi.ac.uk/chembl/api/data/target/search.json
+- **ChEMBL Mechanism**: https://www.ebi.ac.uk/chembl/api/data/mechanism.json
 
 ## Usage
 
@@ -84,6 +86,7 @@ Run the analysis pipeline in order:
 ```bash
 # Step 0: Preprocessing
 python code/step0-pre-processing/preprocessing_unified.py
+python code/step0-pre-processing/fix_ext_val.py
 
 # Step 1: Differential expression analysis
 python code/step1-deg.py
@@ -99,6 +102,7 @@ python code/step3-tcga.py
 python code/step4-network-pharmacology.py
 
 # Step 5: VGAE-KO validation
+python code/convert_gsm5224587.py
 python code/step5-vgae-ko/vgae_ko_pipeline.py
 
 # Step 6: Perturb-seq analysis (all 7 strategies)
