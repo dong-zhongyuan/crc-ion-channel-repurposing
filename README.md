@@ -17,7 +17,6 @@ code/
 ├── step1-deg.py                    # Differential expression analysis
 ├── step2-wgcna.py                  # WGCNA hub gene identification
 ├── step3-external-validation.py   # External cohort validation
-├── step3-tcga.py                   # TCGA survival analysis
 ├── step4-network-pharmacology.py  # PPI bridge path + drug mining
 ├── step5-vgae-ko/
 │   ├── vgae_ko_pipeline.py        # VGAE-based virtual knockout
@@ -61,9 +60,6 @@ All datasets are publicly available:
 - **GSE138202** (n=16): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE138202
 - **GSE95132** (n=24): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95132
 
-### TCGA-COADREAD (Clinical Data)
-- **TCGA-COADREAD** (n=430): https://xenabrowser.net/datapages/?cohort=GDC%20TCGA%20Colon%20and%20Rectal%20Cancer%20(COADREAD)
-
 ### Single-Cell RNA-seq (VGAE-KO Validation)
 - **SCDS0000040** : https://ngdc.cncb.ac.cn/cdcp/dataset/SCDS0000040
 - **GSM5224587** : https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171429
@@ -96,7 +92,6 @@ python code/step2-wgcna.py
 
 # Step 3: External validation
 python code/step3-external-validation.py
-python code/step3-tcga.py
 
 # Step 4: Network pharmacology
 python code/step4-network-pharmacology.py
