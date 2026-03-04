@@ -30,7 +30,7 @@ code/
 │   ├── run_strategy6_perturbation.py  # Global perturbation score
 │   ├── run_strategy7_coexpr.py    # Co-expression disruption
 │   ├── run_figures_summary.py     # Evidence matrix visualization
-└──step7-tcga-analysis
+└── step7-tcga-analysis
 ```
 
 ## Installation
@@ -103,6 +103,9 @@ python code/step5-vgae-ko/vgae_ko_pipeline.py
 
 # Step 6: Perturb-seq analysis (all 7 strategies)
 python code/step6-perturb-seq/run_all.py
+
+# Step 7: TCGA analysis 
+python code/step7-tcga-analysis.py
 ```
 
 ## License
