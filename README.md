@@ -30,7 +30,7 @@ code/
 │   ├── run_strategy6_perturbation.py  # Global perturbation score
 │   ├── run_strategy7_coexpr.py    # Co-expression disruption
 │   ├── run_figures_summary.py     # Evidence matrix visualization
-└── step7-tcga-analysis
+└── step7-tcga-analysis.py
 ```
 
 ## Installation
