@@ -22,15 +22,14 @@ code/
 │   ├── vgae_ko_pipeline.py        # VGAE-based virtual knockout
 │   └── convert_gsm5224587.py      # GSM5224587 data conversion
 ├── step6-perturb-seq/
-│   ├── run_all.py                 # Master script for all strategies
-│   ├── run_strategy2_gsea.py      # GSEA pathway enrichment
-│   ├── run_strategy3_ranking.py   # Transcriptome-wide ranking
-│   ├── run_strategy4_mast.py      # Zero-inflated differential expression
-│   ├── run_strategy5_network.py   # Indirect mediator network
-│   ├── run_strategy6_perturbation.py  # Global perturbation score
-│   ├── run_strategy7_coexpr.py    # Co-expression disruption
-│   ├── run_figures_summary.py     # Evidence matrix visualization
-└── step7-tcga-analysis.py
+├── run_all.py                 # Master script for all strategies
+├── run_strategy2_gsea.py      # GSEA pathway enrichment
+├── run_strategy3_ranking.py   # Transcriptome-wide ranking
+├── run_strategy4_mast.py      # Zero-inflated differential expression
+├── run_strategy5_network.py   # Indirect mediator network
+├── run_strategy6_perturbation.py  # Global perturbation score
+├── run_strategy7_coexpr.py    # Co-expression disruption
+└──run_figures_summary.py     # Evidence matrix visualization
 ```
 
 ## Installation
@@ -104,8 +103,6 @@ python code/step5-vgae-ko/vgae_ko_pipeline.py
 # Step 6: Perturb-seq analysis (all 7 strategies)
 python code/step6-perturb-seq/run_all.py
 
-# Step 7: TCGA analysis 
-python code/step7-tcga-analysis.py
 ```
 
 ## License
