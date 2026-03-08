@@ -16,7 +16,7 @@ code/
 │   ├── fix_ext_val.py              # External validation data preprocessing
 ├── step1-deg.py                    # Differential expression analysis
 ├── step2-wgcna.py                  # WGCNA hub gene identification
-├── step3-external-validation.py   # External cohort validation
+├── step3-external-validation.py   # External cohorts validation
 ├── step4-network-pharmacology.py  # PPI bridge path + drug mining
 ├── step5-vgae-ko/
 │   ├── vgae_ko_pipeline.py        # VGAE-based virtual knockout
