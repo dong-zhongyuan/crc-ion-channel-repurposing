@@ -29,7 +29,7 @@ code/
 ├── run_strategy5_network.py   # Indirect mediator network
 ├── run_strategy6_perturbation.py  # Global perturbation score
 ├── run_strategy7_coexpr.py    # Co-expression disruption
-└──run_figures_summary.py     # Evidence matrix visualization
+└── run_figures_summary.py     # Evidence matrix visualization
 ```
 
 ## Installation
