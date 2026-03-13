@@ -36,7 +36,7 @@ code/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/crc-ion-channel-repurposing.git
+git clone https://github.com/dong-zhongyuan/crc-ion-channel-repurposing.git
 cd crc-ion-channel-repurposing
 
 # Create virtual environment (recommended)
