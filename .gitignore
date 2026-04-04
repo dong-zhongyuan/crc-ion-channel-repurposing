@@ -76,7 +76,7 @@ env/
 .DS_Store
 Thumbs.db
 
-# Data files (too large for git)
+# Data files
 data/
 *.h5ad
 *.h5
@@ -98,14 +98,6 @@ figures/
 *.jpeg
 *.svg
 
-# Temporary files
-tmp/
-temp/
-*.tmp
-
-# R files (if any)
-.Rhistory
-.RData
 .Rproj.user
 
 # Logs
