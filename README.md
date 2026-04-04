@@ -34,7 +34,8 @@ code/
 │
 ├── step4_network_pharmacology/
 │   ├── code/
-│   │   ├── run_fig4.py                      # PPI bridge paths + drug mining
+│   │   ├── run_fig4.py                      # PPI bridge paths
+│   │   ├── drugmining.ipynb                 # Drug mining notebook
 │   │   └── config.json                      # Input path configuration
 │   └── result/                              # (generated at runtime)
 │
@@ -142,6 +143,7 @@ python run_fig3.py
 
 # Step 4: Network pharmacology + drug mining
 cd code/step4_network_pharmacology/code
+jupyter nbconvert --execute drugmining.ipynb   # Drug mining
 python run_fig4.py --config config.json
 
 # Step 5: VGAE-KO virtual knockout
