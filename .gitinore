@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large raw data (downloaded separately)
+raw_data/*.gz
+raw_data/*.zip
+raw_data/*.tar
+
+# Generated output (reproducible by running code)
+figures/
+step1_deg_analysis/result/
+step2_wgcna/result/
+step3_validation/result/
+step4_network_pharmacology/result/
+HCT116-preturb-seq/result/
+
+# API cache (regenerable, large)
+drug_mining_cache/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
