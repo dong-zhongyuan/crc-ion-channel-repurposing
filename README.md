@@ -15,13 +15,11 @@ code/
 ├── step0_data_curation/
 │   └── code/
 │       ├── step1_data_curation.py           # Download & merge raw counts into data.csv
-│       ├── step1_data_curation_with_GSE138202.py
 │       └── fix_ext_val.py                   # External validation data preprocessing
 │
 ├── step1_deg_analysis/
 │   ├── code/
-│   │   ├── step1-deg.py                     # DEG analysis (Welch t-test, BH FDR)
-│   │   └── run_fig1.py                      # Figure 1 generation
+│   │   └── step1-deg.py                     # DEG analysis (Welch t-test, BH FDR)
 │   └── result/                              # (generated at runtime)
 │
 ├── step2_wgcna/
@@ -43,8 +41,7 @@ code/
 ├── step5_vgae_ko/
 │   ├── code/
 │   │   ├── step5-vgae-ko.py                 # VGAE-based virtual knockout
-│   │   ├── convert_gsm5224587.py            # GSM5224587 format conversion
-│   │   └── fig_genki_validation.py
+│   │   └── convert_gsm5224587.py            # GSM5224587 format conversion
 │   ├── data/
 │   │   ├── scTenifoldKnk_HCT116_count.csv        # SCDS0000040 (pre-formatted)
 │   │   ├── scTenifoldKnk_GSM5224587_count.csv    # GSM5224587 (pre-formatted)
