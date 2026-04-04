@@ -1,0 +1,6 @@
+{
+  "hub_genes_csv": "../../step2_wgcna/result/candidate_genes_top100.csv",
+  "drug_mining_csv": "../../drug_mining_out/drug_mining_ranked.csv",
+  "output_dir": "../result",
+  "string_db_dir": "../result/raw/string_db"
+}
