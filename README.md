@@ -10,7 +10,6 @@ Computational pipeline for identifying druggable CRC hub genes connected to ion 
 ## Repository Structure
 
 ```
-```
 code/
 │
 ├── step0_data_curation/
