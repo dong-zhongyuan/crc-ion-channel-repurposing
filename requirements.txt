@@ -1,35 +1,38 @@
-# Core data analysis
-numpy>=1.23.0
-pandas>=1.5.0
-scipy>=1.9.0
-
-# Machine learning
-scikit-learn>=1.1.0
-torch>=2.0.0
-torch-geometric>=2.3.0
-
-# Single-cell analysis
-scanpy>=1.9.0
-anndata>=0.8.0
-
-# Statistical analysis
-statsmodels>=0.13.0
-lifelines>=0.27.0
-pydeseq2>=0.4.0
-pycombat>=0.3.0
-
-# Network analysis
-networkx>=2.8.0
-
-# Pathway analysis
-gseapy>=1.0.0
+# Core scientific computing
+numpy>=1.24
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.3
 
 # Visualization
-matplotlib>=3.6.0
-seaborn>=0.12.0
-umap-learn>=0.5.0
-adjustText>=0.8.0
-Pillow>=9.0.0
+matplotlib>=3.7
+seaborn>=0.13
+Pillow>=10.0
 
-# Utilities
-requests>=2.28.0
+# Single-cell analysis
+anndata>=0.10
+scanpy>=1.9
+
+# Statistical testing
+statsmodels>=0.14
+pydeseq2>=0.4
+pycombat>=0.3
+
+# Pathway enrichment
+gseapy>=1.0
+
+# Graph / network analysis
+networkx>=3.1
+
+# Deep learning (VGAE-KO)
+torch>=2.0
+torch-geometric>=2.4
+
+# Dimensionality reduction
+umap-learn>=0.5
+
+# API requests (drug mining)
+requests>=2.31
+
+# Text alignment
+adjustText>=0.8
